@@ -1,0 +1,25 @@
+Scenario: Login as a driver
+    But driver user is on the login page
+    And driver user is on the login page
+    Given driver user is on the login page
+    When the users enters the driver information
+    Then the user should be able to login
+
+    Given satirinda oldugu gibi aynisini
+    but ve and olarak da verebiliriz ayni sonuc cikar
+
+    if you implemented dryRun=true it will not execute.
+    But if you implemented dryRun=false you can see execute
+
+    shortcut
+    Ctrl + / -------> # does not execute
+    Ctrl + space----> automatically write options
+
+    tag option
+    @driver-------------> if you want write above line on the Scenario only this scenario execute
+    @store_manager -----> same
+    @sales_manager -----> same
+
+    tags={"@driver", "@VYT-123"} or "@driver and @VYT-123" only this scenario is writing
+    tags="@smoke" or "@login" // if you write on the top all of scenario writing
+    tags={"@login", "~@VYT-123"} // (~) this means does not write
