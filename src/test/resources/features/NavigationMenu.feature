@@ -1,4 +1,4 @@
-@nav_menu
+
 Feature: Navigation menu
 
 
