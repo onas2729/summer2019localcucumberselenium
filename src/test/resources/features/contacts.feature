@@ -1,5 +1,5 @@
 Feature: Contacts page
-
+@driver2
 Scenario: Default page number
 Given a driver is logged in
 When the user goes to "Customers" "Contacts"
