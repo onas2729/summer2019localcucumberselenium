@@ -1,11 +1,11 @@
 Feature: Contacts page
-@driver2
+
 Scenario: Default page number
 Given a driver is logged in
 When the user goes to "Customers" "Contacts"
 Then default page number should be 1
 
-
+  @driver2
 Scenario: Menu options
 Given a driver is logged in
 Then the user should see following menu options

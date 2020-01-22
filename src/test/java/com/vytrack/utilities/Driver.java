@@ -12,6 +12,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
+
+
     private Driver() {
 
     }
@@ -21,7 +23,20 @@ public class Driver {
     public static WebDriver get() {
         if (driver == null) {
 
-            String browser = ConfigurationReader.get("browser");
+//            String browser = ConfigurationReader.get("browser");
+//            System.out.println("Creating WebDriver - "+browser);
+
+            String browser;
+//            if we pass the driver from terminal then use that one
+            if (System.getProperty("browser") != null) {
+                browser = System.getProperty("browser");
+            } else {
+                browser = ConfigurationReader.get("browser");
+            }
+//           if we do not pass the driver from terminal then use the one properties file
+
+            // if we do not pass driver from terminal then use the one properties file
+
             switch (browser) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

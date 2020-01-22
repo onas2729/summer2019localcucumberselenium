@@ -1,18 +1,21 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/NavigationMenu.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/Login.feature");
 formatter.feature({
-  "name": "Navigation menu",
+  "name": "Users should be able to login",
   "description": "",
-  "keyword": "Feature"
-});
-formatter.scenario({
-  "name": "Marketing --\u003e Campaigns",
-  "description": "",
-  "keyword": "Scenario",
+  "keyword": "Feature",
   "tags": [
     {
-      "name": "@special"
+      "name": "@login"
+    },
+    {
+      "name": "@smoke"
     }
   ]
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
 });
 formatter.before({
   "status": "passed"
@@ -27,32 +30,41 @@ formatter.match({
 formatter.result({
   "status": "passed"
 });
+formatter.scenario({
+  "name": "Login as a store manager",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@login"
+    },
+    {
+      "name": "@smoke"
+    },
+    {
+      "name": "@store_manager"
+    },
+    {
+      "name": "@one"
+    }
+  ]
+});
 formatter.step({
-  "name": "the user enters the sales manager information",
-  "keyword": "And "
-});
-formatter.match({
-  "location": "LoginStepDefs.the_user_enters_the_sales_manager_information()"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "the user goes to Marketing, Campaigns",
+  "name": "the user enters the store manager information",
   "keyword": "When "
 });
 formatter.match({
-  "location": "NavigationMenuStepDefintions.the_user_goes_to_Marketing_Campaigns()"
+  "location": "LoginStepDefs.the_user_enters_the_store_manager_information()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the url should be https://qa3.vytrack.com/campaign/",
+  "name": "the user should be able to login",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "NavigationMenuStepDefintions.the_url_should_be_https_qa_vytrack_com_campaign(Integer)"
+  "location": "LoginStepDefs.the_user_should_be_able_to_login()"
 });
 formatter.result({
   "status": "passed"
